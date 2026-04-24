@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-only-one-pod-from-default
+  namespace: roboshop
+spec:
+  PodSelector:
+    matchLabels:
+      app: roboshop
+  policyTypes:
+    - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: default
+      PodSelector:
+        matchLabels:
+          app: default1
+        
+    
