@@ -4,18 +4,16 @@ metadata:
   name: allow-only-one-pod-from-default
   namespace: roboshop
 spec:
-  PodSelector:
+  podSelector:
     matchLabels:
       app: roboshop
   policyTypes:
-    - Ingress
+  - Ingress
   ingress:
   - from:
     - namespaceSelector:
         matchLabels:
           name: default
-      PodSelector:
+      podSelector:
         matchLabels:
           app: default1
-        
-    
