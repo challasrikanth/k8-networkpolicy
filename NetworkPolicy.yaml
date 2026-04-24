@@ -9,12 +9,11 @@ spec:
       app: roboshop
   policyTypes:
   - Ingress
-  - egress
   ingress:
   - from:
     - namespaceSelector:
         matchLabels:
-          name: default
+          kubernetes.io/metadata.name: default
       podSelector:
         matchLabels:
           app: default1
