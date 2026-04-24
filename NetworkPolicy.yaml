@@ -9,6 +9,7 @@ spec:
       app: roboshop
   policyTypes:
   - Ingress
+  - egress
   ingress:
   - from:
     - namespaceSelector:
